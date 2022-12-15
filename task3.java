@@ -5,22 +5,24 @@ import java.util.Arrays;
 import java.util.Collections;
 public class task3 {
     public static void main(String[] args) {
-        ArrayList<Integer> arr = new ArrayList<Integer>(Arrays.asList
-                                    (9, 45, 1, 12, -5, 4, 1, 57, 6, 7, -8));
-        System.out.println(arr);
+        ArrayList<Integer> list = new ArrayList<Integer>(Arrays.asList
+                                    (9, 45, 1, 12, -5, 4, 1, 57, 6, 7));
+        System.out.println(list);
 
-        Collections.sort(arr);
+        Collections.sort(list);
 
-        System.out.println(arr.toString());
-        System.out.println("Минимальное число списка: " + arr.get(0));
+        System.out.println(list.toString());
+        System.out.println("Минимальное число списка: " + list.get(0));
 
-        System.out.println("Максимальное число списка: " + arr.get(arr.size() - 1));
+        System.out.println("Максимальное число списка: " + list.get(list.size() - 1));
         
-        if (arr.size() %2 != 0) {
-            System.out.println("Среднее число списка: " + arr.get(arr.size() / 2 + 0)); 
-        } else {
-            System.out.println("Средние числа списка: " + arr.get(arr.size() / 2 - 1) + " " +
-                                 "и"+ " " + arr.get(arr.size() / 2));
-        }
+        int n = Integer.valueOf(list.size());
+        System.out.println("Размер списка равен: " + n);
+
+        double sum = 0;
+        for (int i = 0; i < list.size(); i++) {
+            sum += list.get(i); 
+        }  
+        System.out.println("Среднее арифметическое: " + sum / list.size()); 
     }
 }
